@@ -2,291 +2,51 @@
 
 {% block content %}
 
-    <!-- Main Site -->
-       <main id="site-main">
-
-            <!-- Blog Post Section -->
-                <section id="posts">
-                    <div class="container">
-                        <div class="grid">
-                            <!-- article -->
-                                <div class="grid-item">
-                                    <article class="article">
-                                        <div class="card">
-                                            <div class="overflow-img">
-                                                <a href="#">
-                                                    <img src="./assets/img1.jpg" class="img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="card-body text-center px-1">
-                                                <a href="#" class="text-title display-1 text-dark">
-                                                    {{ blog_title | upper }}
-                                                </a>
-                                                <p class="secondary-title text-secondary display-3">
-                                                    <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                    <span><i class="far fa-comments text-primary"></i> 12</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
+    <div class="container-fluid ">
+        <div class="row my-2">
+            <div class="col">
+                <h2 >{{ blog_title | upper }}</h2>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-light btn-primary " type="button" id="button-search">
+                      <i class="bi bi-search"></i> <!-- Bootstrap Icons -->
+                    </button>
+                  </div>
+            </div>
+        </div>
+        
+        <div class="row m-3">
+            {% if posts %}
+               {% for post in posts %}
+            <div class="col-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/300" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <h5 class="card-title">{{post.title}}</h5>
+                                <p class="card-text">{{post.content}}</p>
+                                <div class="d-flex justify-content-between">
+                                     <a href="{% url 'blog:detail' post_id=post.id %}">Read More</a>
+                                    <a class="text-decoration-none text-dark fw-bold" href="#">Sports</a>
                                 </div>
-                            <!-- .article -->
-                            <!-- article -->
-                                <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img2.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                                </div>
-                            <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img3.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
                             </div>
-                         <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img4.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                         <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img5.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                         <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img6.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                         <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img7.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                         <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img8.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                         <!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img9.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                Looking for some feedback for this rejected track
-                                                technology
-                                            </a>
-                                            <p class="secondary-title text-secondary display-3">
-                                                <span><i class="far fa-clock text-primary"></i> Clock Wed 02, 2021</span>
-                                                <span><i class="far fa-comments text-primary"></i> 12</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                         <!-- .article -->
-                        </div>
-
-                        <div class="text-center">
-                            <button class="btn btn-primary secondary-title text-light">Load More Posts...</button>
                         </div>
                     </div>
-                </section>
-            <!-- .Blog Post Section -->
+                </div>
+            </div>
+                {% endfor %}
+            {% else %}
+                <p> No Posts Available </p>
+            {% endif %}
 
-            <!-- Swiper slider -->
-                <section class="slider">
-                    <div class="container">
-
-                        <!-- Slider main container -->
-                            <div class="swiper-container">
-                                <!-- Additional required wrapper -->
-                                <div class="swiper-wrapper">
-                                    <!-- Slides -->
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <img src="./assets/slider/img1.jpg" class="img-fluid" alt="">
-                                        </a>
-                                    </div>
-                                     <!-- Slides -->
-                                      <!-- Slides -->
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <img src="./assets/slider/img2.jpg" class="img-fluid" alt="">
-                                        </a>
-                                    </div>
-                                     <!-- Slides -->
-                                      <!-- Slides -->
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <img src="./assets/slider/img3.jpg" class="img-fluid" alt="">
-                                        </a>
-                                    </div>
-                                        <!-- Slides -->
-                                             <!-- Slides -->
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <img src="./assets/slider/img4.jpg" class="img-fluid" alt="">
-                                        </a>
-                                    </div>
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <a href="#">
-                                                <img src="./assets/slider/img5.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                            <!-- Slides -->
-                                            <div class="swiper-slide">
-                                                <a href="#">
-                                                    <img src="./assets/slider/img6.jpg" class="img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                                <!-- Slides -->
-                                                <div class="swiper-slide">
-                                                    <a href="#">
-                                                        <img src="./assets/slider/img7.jpg" class="img-fluid" alt="">
-                                                    </a>
-                                                </div>
-                                                    <!-- Slides -->
-
-                                </div>
-                            </div>
-
-                    </div>
-                </section>
-             <!-- .Swiper slider -->
-
-       </main>
-    <!-- .Main Site -->
+        </div>
+  
+        
+    </div>
 
   {% endblock %}
